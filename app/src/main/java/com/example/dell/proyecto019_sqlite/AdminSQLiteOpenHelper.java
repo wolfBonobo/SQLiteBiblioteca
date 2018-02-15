@@ -13,6 +13,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         super(context, name, factory, version);
     }
 
+
+    //SE CREA LA PRIMERA VEZ LA TABLA CON ESTOS CAMPOS.
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table articulos(codigo int primary key, descripcion text, precio real)");

@@ -7,34 +7,75 @@
     android:orientation="vertical"
     tools:context="com.example.dell.proyecto019_sqlite.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <EditText
         android:id="@+id/et1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:hint="Ingrese código"
         android:inputType="number" />
 
+        <ImageButton
+            android:id="@+id/ib1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/back"
+            android:onClick="mover"/>
+
+        <ImageButton
+            android:id="@+id/ib2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/forward"
+            android:onClick="mover"/>
+
+    </LinearLayout>
+
     <EditText
         android:id="@+id/et2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese descripción"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/et3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese precio"
         android:inputType="numberDecimal" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Alta"
+                    android:onClick="alta"/>
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Baja por codigo"
+                android:onClick="bajaPorCodigo"/>
+            </LinearLayout>
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alta"
-        android:onClick="alta"/>
-
+        android:text="Consulta por descripción"
+        android:onClick="consultaPorDescripcion"/>
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
@@ -42,19 +83,6 @@
         android:text="Consulta por código"
         android:onClick="consultaPorCodigo"/>
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Consulta por descripción"
-        android:onClick="consultaPorDescripcion"/>
-
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Baja por codigo"
-        android:onClick="bajaPorCodigo"/>
 
     <Button
         android:id="@+id/btn5"
@@ -62,4 +90,23 @@
         android:layout_height="wrap_content"
         android:text="Modificación"
         android:onClick="modificacion"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar todo"
+        android:onClick="listar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/txtLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </ScrollView>
 </LinearLayout>
